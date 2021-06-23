@@ -1,0 +1,18 @@
+.row {
+    display: flex;
+    margin: 0 16rem;
+    justify-content: space-between;
+    align-items: center;
+
+    &__col {
+        width: 50%;
+    }
+
+    &__col:first-child {
+        margin-right: 2rem;
+    }
+
+    &__col:last-child {
+        margin-left: 2rem;
+    }
+}
