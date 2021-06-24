@@ -16,4 +16,17 @@
         margin-left: 2rem;
         margin-top: -15rem;
     }
+
+    &__feature-col {
+        width: 25%;
+        margin: 0 2rem;
+    }
+
+    &__feature-col:first-child {
+        margin-left: 0;
+    }
+
+    &__feature-col:last-child {
+        margin-right: 0;
+    }
 }
