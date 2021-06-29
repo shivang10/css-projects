@@ -1,11 +1,12 @@
 .row {
     display: flex;
-    margin: 0 16rem;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
 
-    &__col {
-        width: 50%;
+    @include respond(tab-port) {
+        flex-direction: column;
+        margin: 0;
     }
 
     &__col:first-child {
@@ -15,6 +16,14 @@
     &__col:last-child {
         margin-left: 2rem;
         margin-top: -15rem;
+    }
+
+    &__col {
+        width: 50%;
+        @include respond(tab-port) {
+            width: 100%;
+            margin: 1rem;
+        }
     }
 
     &__feature-col {
@@ -33,6 +42,11 @@
     &__section-tours {
         width: 33%;
         margin: 0 2rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin: 0 2rem;
+        }
     }
 }
 

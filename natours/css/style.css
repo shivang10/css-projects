@@ -12,6 +12,8 @@ $breakpoint argument choices;
 - tab-land
 - big-desktop
 
+ORDER: Base + typography > general layout + grid > page layout > components
+
 1em = 16px
 37.5em = 600px
 56.25em = 900px
@@ -38,7 +40,11 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInLeft {
   0% {
@@ -72,8 +78,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -86,12 +91,20 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation: moveInLeft 2s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 2s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem;
+        font-size: 5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -104,6 +117,12 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -582,16 +601,24 @@ body {
 
 .row {
   display: flex;
-  margin: 0 16rem;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center; }
-  .row__col {
-    width: 50%; }
+  @media (max-width: 56.25em) {
+    .row {
+      flex-direction: column;
+      margin: 0; } }
   .row__col:first-child {
     margin-right: 2rem; }
   .row__col:last-child {
     margin-left: 2rem;
     margin-top: -15rem; }
+  .row__col {
+    width: 50%; }
+    @media (max-width: 56.25em) {
+      .row__col {
+        width: 100%;
+        margin: 1rem; } }
   .row__feature-col {
     width: 25%;
     margin: 0 2rem; }
@@ -602,6 +629,10 @@ body {
   .row__section-tours {
     width: 33%;
     margin: 0 2rem; }
+    @media (max-width: 56.25em) {
+      .row__section-tours {
+        width: 100%;
+        margin: 0 2rem; } }
 
 .story-grid {
   display: flex;
